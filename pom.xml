@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- INFO DEL DESARROLLADOR -->
+	<developers>
+		<developer>
+			<id>JoseMM</id>
+			<name>Jose Munoz Munoz</name>
+			<email>jmumunoz@emeal.nttdata.com</email>
+			<organization>NTT Data</organization>
+			<roles>
+				<role>Estudiante</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<!-- INFO DEL PROYECTO -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nttdata</groupId>
+	<artifactId>nttdatacenters-logback-t1-JoseMM</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- PROPIEDADES DEL PROYECTO -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4j.version>1.6.6</slf4j.version>
+		<logback.version>1.0.7</logback.version>
+	</properties>
+
+	<!-- PLUGINS DEL PROYECTO -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>resources</goal>
+							<goal>testResources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>src/main/generated-groovy-stubs</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.9.1</version>
+				<configuration>
+					<maxmemory>512</maxmemory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- DEPENDENCIAS DEL PROYECTO -->
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-project-info-reports-plugin</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+	</dependencies>
+
+
+</project>

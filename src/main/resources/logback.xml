@@ -1,0 +1,40 @@
+<configuration debug="true">
+
+	<!-- VARIABLE DONDE SE GUARDA LA FECHA -->
+	<timestamp key="logDateVar" datePattern="dd-MM-yyyy" />
+	
+	<!-- ROLLINGFILEAPPENDER -->
+	<appender name="TuberiaNTTDATA"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		
+		<!-- NOMBRE DEL FICHERO LOG -->
+		<file>C://dev//logs//logJoseMM-${logDateVar}.log</file>
+		
+		<!-- POLÍTICA CON LA QUE TROCEAMOS O GESTIONAMOS EL FICHERO -->
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>C://dev//logs//logJoseMM-${logDateVar}.%i.log.zip</fileNamePattern>
+			
+			<!-- CANTIDAD DE FICHEROS (de 1 a 3) -->
+			<minIndex>1</minIndex>
+			<maxIndex>3</maxIndex>
+		</rollingPolicy>
+
+		<!-- LIMITE DE TAMANIO (50KB) -->
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>50KB</maxFileSize>
+		</triggeringPolicy>
+		
+		<!-- PERSONALIZACION DEL LAYOUT -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - [%method] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- LOGGER ROOT CONFIGURADO AL NIVEL DEBUG-->
+	<root level="debug">
+		<appender-ref ref="TuberiaNTTDATA" />
+	</root>
+
+</configuration>
