@@ -29,7 +29,7 @@ public class NTTDataMain {
 		System.out.println("-------- ¡Bienvenido! --------");
 		
 		
-		/* Pedira al usuario un numero que sera el limite */
+		//Pedira al usuario un numero que sera el limite
 		do {
 			try {
 				System.out.println("Dime que numero hara de limite");
@@ -48,14 +48,14 @@ public class NTTDataMain {
 			}
 		} while (limite == 0);
 
-		/* Se genera un numero secreto aleatorio */
+		// Se genera un numero secreto aleatorio
 		System.out.println("¡A ver si aciertas el numero secreto!");
 		int numero = 0;
 
 		int numAleatorio = (int) (Math.random() * (limite-1)+1);
 
 		
-		/* Pedira al usuario un numero, en cuestion de cercania al numero secreto respondera de una manera */
+		// Pedira al usuario un numero, en cuestion de cercania al numero secreto respondera de una manera
 		do {
 			
 			
@@ -114,7 +114,7 @@ public class NTTDataMain {
 		} while (intentos > 0);
 
 		
-		/* Se calculan los fallos, si el usuario acierta el numero, devolvera un mensaje */
+		//Se calculan los fallos, si el usuario acierta el numero, devolvera un mensaje
 		int errores = 7 - intentos;
 		
 		if (gana == true) {

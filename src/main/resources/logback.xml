@@ -9,7 +9,7 @@
 		
 		<!-- NOMBRE DEL FICHERO LOG -->
 		<file>C://dev//logs//logJoseMM-${logDateVar}.log</file>
-		
+		<append>false</append>
 		<!-- POLÍTICA CON LA QUE TROCEAMOS O GESTIONAMOS EL FICHERO -->
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
